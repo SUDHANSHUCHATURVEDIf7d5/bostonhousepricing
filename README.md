@@ -10,6 +10,6 @@
 Create a new environment
 ...
 python -m venv D:\harvard\ML\bostonhousepricing_implementation\bostonhousepricing  
-py -m venv env  
+py -m venv venv  
 env\Scripts\activate
 ...
