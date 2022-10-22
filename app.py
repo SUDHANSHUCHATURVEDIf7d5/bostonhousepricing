@@ -15,6 +15,15 @@ def home():
     return render_template('home.html')
 
 
+@app.route("/predict", methods=['POST'])
+# here we will create a form on the web page where user can give the input
+def predict():
+    data=[float(x) for x in request.form.values()]
+    final_input = scalar.transform(np.array(data).reshape(1,-1))
+    print(final_input)
+    output = regmodel.predict(final_input)[0]
+    return render_template('home.html', prediction_text="The Predicted House price is: {}".format(output))
+
 
 @app.route('/predict_api',methods=['POST'])
 def predict_api():
