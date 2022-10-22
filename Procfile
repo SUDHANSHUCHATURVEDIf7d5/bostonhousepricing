@@ -1,0 +1,4 @@
+<!-- A Procfile is a mechanism for declaring what commands are run by your application's containers on the Deis platform. It follows the process model. You can use a Procfile to declare various process types, such as multiple types of workers, a singleton process like a clock, or a consumer of the Twitter streaming API.
+That is it tells the heroku platform what commands to run when starting the application -->
+
+web: gunicorn app:app    <!-- gunicorn allows python application to run, because it creates multiple python processess The First app in the app:app is the name of the app in our flask code(app=Flask(__name__))-->
